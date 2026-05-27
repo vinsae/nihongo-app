@@ -406,3 +406,317 @@ export const MODULES_CONFIG = [
   { id:'kanji',        title:'Kanji N5',      sub:'漢字',     desc:'50 kanji JLPT N5 dengan on/kun yomi dan contoh penggunaan.', level:'Langkah 5', icon:'漢', color:'#8338ec', bg:'rgba(131,56,236,0.10)', total:50 },
   { id:'conversation', title:'Percakapan',    sub:'会話',     desc:'6 situasi: Perkenalan, Restoran, Belanja, Bantuan, Transportasi, Darurat.', level:'Langkah 6', icon:'話', color:'#f4a261', bg:'rgba(244,162,97,0.10)', total:42 },
 ]
+
+// ─── BUDAYA JEPANG ────────────────────────────────────────────────────────────
+export const BUDAYA = [
+  {
+    id: 'aisatsu-kerja', title: 'Salam di Tempat Kerja', icon: '🤝',
+    items: [
+      { jp: 'おはようございます', romaji: 'Ohayou gozaimasu', id: 'Selamat pagi (wajib diucapkan saat tiba)', tip: 'Diucapkan kepada semua orang saat tiba, bahkan ke atasan. Sangat penting!' },
+      { jp: 'おつかれさまです', romaji: 'Otsukaresama desu', id: 'Terima kasih atas kerja kerasnya', tip: 'Diucapkan ke rekan kerja sepanjang hari & saat pulang. Sangat sering dipakai!' },
+      { jp: 'よろしくおねがいします', romaji: 'Yoroshiku onegaishimasu', id: 'Mohon kerjasamanya / tolong dibantu', tip: 'Diucapkan saat meminta bantuan, mulai proyek baru, atau perkenalan kerja' },
+      { jp: 'しつれいします', romaji: 'Shitsurei shimasu', id: 'Permisi (saat masuk ruangan / meninggalkan orang)', tip: 'Ucapkan sebelum masuk ruang atasan atau meninggalkan meeting' },
+      { jp: 'いってきます', romaji: 'Ittekimasu', id: 'Saya pergi dulu (ke luar kantor)', tip: 'Diucapkan saat meninggalkan kantor sementara' },
+      { jp: 'いってらっしゃい', romaji: 'Itterasshai', id: 'Hati-hati di jalan (jawaban dari rekan)', tip: 'Balasan dari rekan yang tinggal saat seseorang pergi keluar' },
+      { jp: 'ただいま', romaji: 'Tadaima', id: 'Saya sudah kembali', tip: 'Diucapkan saat kembali ke tempat kerja' },
+      { jp: 'おかえりなさい', romaji: 'Okaerinasai', id: 'Selamat datang kembali (balasan)', tip: 'Balasan dari rekan saat seseorang kembali' },
+      { jp: 'おさきにしつれいします', romaji: 'Osaki ni shitsurei shimasu', id: 'Mohon maaf saya pulang lebih dulu', tip: 'WAJIB diucapkan saat pulang sebelum rekan lain. Sangat penting etikanya!' },
+      { jp: 'ごくろうさまでした', romaji: 'Gokurousama deshita', id: 'Terima kasih atas kerja kerasnya (dari atasan ke bawahan)', tip: 'Dipakai atasan ke bawahan. Jangan pakai ke atasan — pakai おつかれさまです' },
+    ]
+  },
+  {
+    id: 'etos-kerja', title: 'Etos & Konsep Kerja Jepang', icon: '⚙️',
+    items: [
+      { jp: 'ほうれんそう (報・連・相)', romaji: 'Hōrenso', id: 'Lapor → Sambung → Konsultasi', tip: 'Konsep WAJIB di tempat kerja Jepang: ほうこく(lapor), れんらく(sambungkan info), そうだん(konsultasi). Selalu lakukan ini!' },
+      { jp: 'かいぜん (改善)', romaji: 'Kaizen', id: 'Perbaikan terus-menerus', tip: 'Budaya perbaikan bertahap setiap hari. Selalu cari cara kerja yang lebih baik & efisien' },
+      { jp: 'もったいない (勿体無い)', romaji: 'Mottainai', id: 'Sayang dibuang / jangan boros', tip: 'Sikap menghargai barang & tidak membuang-buang. Sangat dihargai di tempat kerja Jepang' },
+      { jp: 'がんばります (頑張ります)', romaji: 'Ganbarimasu', id: 'Saya akan berusaha sepenuh hati', tip: 'Diucapkan saat mendapat tugas. Tunjukkan semangat & komitmen' },
+      { jp: 'じかんをまもります (時間を守ります)', romaji: 'Jikan wo mamorimasu', id: 'Saya akan tepat waktu', tip: 'Ketepatan waktu adalah hal SANGAT serius di Jepang. Datang terlambat sangat memalukan' },
+      { jp: 'ねまわし (根回し)', romaji: 'Nemawashi', id: 'Konsultasi informal sebelum keputusan', tip: 'Kebiasaan mendiskusikan ide ke semua pihak terkait sebelum rapat resmi' },
+      { jp: 'いしきのたかさ (意識の高さ)', romaji: 'Ishiki no takasa', id: 'Kesadaran & tanggung jawab tinggi', tip: 'Pekerja Jepang sangat sadar terhadap kualitas pekerjaan dan nama baik perusahaan' },
+      { jp: 'あいさつ (挨拶)', romaji: 'Aisatsu', id: 'Sapaan / Salam', tip: 'Salam yang baik adalah fondasi hubungan kerja. Selalu sapa dengan penuh hormat' },
+      { jp: 'きびきびうごく (きびきび動く)', romaji: 'Kibikibi ugoku', id: 'Bergerak cepat & sigap', tip: 'Jepang menghargai kecepatan & responsivitas dalam bekerja. Jangan lamban!' },
+      { jp: 'かくにん (確認)', romaji: 'Kakunin', id: 'Konfirmasi / Verifikasi', tip: 'Selalu konfirmasi tugas & instruksi agar tidak ada kesalahan. Lebih baik tanya dari pada salah' },
+    ]
+  },
+  {
+    id: 'norma-sosial', title: 'Norma Sosial & Etika', icon: '🎌',
+    items: [
+      { jp: 'おじぎ (お辞儀)', romaji: 'Ojigi', id: 'Membungkuk sebagai tanda hormat', tip: '15° = salam biasa, 30° = terima kasih, 45° = permintaan maaf serius. Semakin dalam = semakin hormat' },
+      { jp: 'くつをぬぐ (靴を脱ぐ)', romaji: 'Kutsu wo nugu', id: 'Lepas sepatu saat masuk rumah', tip: 'WAJIB lepas sepatu sebelum masuk rumah/tatami. Ada genkan (area lepas sepatu) di pintu masuk' },
+      { jp: 'わをみだすな (和を乱すな)', romaji: 'Wa wo midasu na', id: 'Jangan ganggu keharmonisan kelompok', tip: 'Wa (和) = harmoni kelompok. Hindari konflik terbuka, utamakan konsensus' },
+      { jp: 'けんそん (謙遜)', romaji: 'Kenson', id: 'Rendah hati / Tidak sombong', tip: 'Memuji diri sendiri dianggap tidak sopan. Selalu merendah saat dipuji' },
+      { jp: 'めいわく (迷惑)', romaji: 'Meiwaku', id: 'Merepotkan / Mengganggu orang lain', tip: 'Orang Jepang sangat menghindari merepotkan orang. Jaga volume suara, antri, buang sampah pada tempatnya' },
+      { jp: 'おみやげ (お土産)', romaji: 'Omiyage', id: 'Oleh-oleh', tip: 'Budaya membawa oleh-oleh dari perjalanan untuk dibagikan ke rekan kerja. Sangat dihargai!' },
+      { jp: 'なまえのよびかた', romaji: 'Namae no yobikata', id: 'Cara memanggil nama', tip: 'Panggil dengan nama keluarga + さん (misal: 田中さん). Jangan sebut nama depan kecuali diizinkan' },
+      { jp: 'めいしのわたしかた (名刺の渡し方)', romaji: 'Meishi no watashibata', id: 'Etika kartu nama', tip: 'Berikan & terima kartu nama dengan dua tangan, membungkuk. Baca dulu sebelum simpan. Jangan ditulis atau dilipat!' },
+    ]
+  },
+  {
+    id: 'kehidupan-sehari', title: 'Kehidupan Sehari-hari di Jepang', icon: '🏙️',
+    items: [
+      { jp: 'ごみのぶんべつ (ゴミの分別)', romaji: 'Gomi no bunbetsu', id: 'Pemilahan sampah', tip: 'Sampah di Jepang dipilah ketat: もえるごみ(sampah bakar), もえないごみ(tidak bakar), プラ(plastik), カン(kaleng). Periksa aturan daerah setempat!' },
+      { jp: 'でんしゃのマナー', romaji: 'Densha no manaa', id: 'Etika di kereta', tip: 'Di kereta: nada HP silent, tidak telepon, bicara pelan, berikan kursi prioritas, antri tertib di garis' },
+      { jp: 'きんえん (禁煙)', romaji: "Kin'en", id: 'Dilarang merokok', tip: 'Merokok hanya di area yang diizinkan (喫煙所). Merokok sembarangan bisa kena denda!' },
+      { jp: 'コンビニのつかいかた', romaji: 'Konbini no tsukaikata', id: 'Cara pakai minimarket', tip: 'Konbini (7-Eleven, Lawson, FamilyMart) buka 24 jam. Bisa bayar tagihan, cetak dokumen, kirim paket, dll' },
+      { jp: 'てあらい・うがい (手洗い・うがい)', romaji: 'Tearai / Ugai', id: 'Cuci tangan & kumur-kumur', tip: 'Kebiasaan sanitasi dasar yang sangat dijaga orang Jepang, terutama musim flu' },
+      { jp: 'おふろのはいりかた (お風呂の入り方)', romaji: 'Ofuro no hairikata', id: 'Cara mandi di Jepang', tip: 'Bilas badan dulu sebelum masuk bathtub. Air bathtub dipakai bersama keluarga — jangan dikotori!' },
+    ]
+  },
+]
+
+// ─── BAHASA TEMPAT KERJA ──────────────────────────────────────────────────────
+export const BAHASA_KERJA = [
+  {
+    id: 'keselamatan', title: 'Keselamatan Kerja (安全)', icon: '⛑️', color: '#e63946',
+    items: [
+      { jp: '危険！(きけん)', romaji: 'Kiken!', id: 'Berbahaya!', tip: 'Kata terpenting — hafalkan!' },
+      { jp: '注意！(ちゅうい)', romaji: 'Chuui!', id: 'Hati-hati! / Perhatian!', tip: 'Sering ada di rambu keselamatan pabrik' },
+      { jp: '安全第一 (あんぜんだいいち)', romaji: 'Anzen daiichi', id: 'Keselamatan nomor satu', tip: 'Moto keselamatan kerja paling umum di pabrik Jepang' },
+      { jp: 'けがをしました', romaji: 'Kega wo shimashita', id: 'Saya terluka', tip: 'Segera ucapkan jika terjadi kecelakaan kerja' },
+      { jp: 'きんきゅうていし (緊急停止)', romaji: 'Kinkyuu teishi', id: 'Hentikan darurat / Emergency stop', tip: 'Tombol merah besar di mesin pabrik — hentikan segala operasi' },
+      { jp: 'ほごぐを つけてください', romaji: 'Hogogu wo tsukete kudasai', id: 'Tolong pakai alat pelindung', tip: 'ほごぐ = APD (helm, sarung tangan, kacamata pelindung, dll)' },
+      { jp: 'かじ！(火事)', romaji: 'Kaji!', id: 'Kebakaran!', tip: 'Teriak ini jika ada kebakaran' },
+      { jp: 'きゅうきゅうしゃを よんでください', romaji: 'Kyuukyuusha wo yonde kudasai', id: 'Tolong panggil ambulans', tip: '119 = nomor darurat ambulans & pemadam Jepang' },
+    ]
+  },
+  {
+    id: 'instruksi-kerja', title: 'Instruksi Kerja Umum', icon: '📋', color: '#2a9d8f',
+    items: [
+      { jp: 'はじめてください', romaji: 'Hajimete kudasai', id: 'Tolong mulai', tip: 'Dari atasan/supervisor saat memulai pekerjaan' },
+      { jp: 'とめてください', romaji: 'Tomete kudasai', id: 'Tolong hentikan', tip: 'Instruksi berhenti dari supervisor' },
+      { jp: 'もういちどやってください', romaji: 'Mou ichido yatte kudasai', id: 'Tolong lakukan sekali lagi', tip: 'Jika ada kesalahan, supervisor akan minta diulang' },
+      { jp: 'かくにんしてください (確認してください)', romaji: 'Kakunin shite kudasai', id: 'Tolong konfirmasi / cek dulu', tip: 'Selalu konfirmasi sebelum & sesudah pekerjaan penting' },
+      { jp: 'ほうこくしてください (報告してください)', romaji: 'Houkoku shite kudasai', id: 'Tolong lapor', tip: 'Laporan adalah budaya wajib (part of hōrensō)' },
+      { jp: 'わかりましたか？', romaji: 'Wakarimashita ka?', id: 'Sudah mengerti?', tip: 'Supervisor sering tanya ini setelah beri instruksi' },
+      { jp: 'はい、わかりました', romaji: 'Hai, wakarimashita', id: 'Ya, saya mengerti', tip: 'Jawaban standar. Selalu jawab dengan jelas & tegas' },
+      { jp: 'すみません、もういちどおねがいします', romaji: 'Sumimasen, mou ichido onegaishimasu', id: 'Maaf, tolong ulangi sekali lagi', tip: 'Jangan ragu minta diulangi — lebih baik tanya dari pada salah kerja' },
+      { jp: 'てつだってください', romaji: 'Tetsudatte kudasai', id: 'Tolong bantu saya', tip: 'Saat butuh bantuan rekan kerja' },
+      { jp: 'おわりました', romaji: 'Owarimashita', id: 'Sudah selesai', tip: 'Lapor ke supervisor setelah menyelesaikan tugas' },
+    ]
+  },
+  {
+    id: 'kosakata-pabrik', title: 'Kosakata Pabrik / Industri', icon: '🏭', color: '#8338ec',
+    items: [
+      { jp: 'きかい (機械)', romaji: 'Kikai', id: 'Mesin' },
+      { jp: 'こうじょう (工場)', romaji: 'Koujou', id: 'Pabrik' },
+      { jp: 'せいひん (製品)', romaji: 'Seihin', id: 'Produk / Barang jadi' },
+      { jp: 'ざいりょう (材料)', romaji: 'Zairyou', id: 'Bahan baku' },
+      { jp: 'ふりょうひん (不良品)', romaji: 'Furyouhin', id: 'Produk cacat / reject' },
+      { jp: 'けんさ (検査)', romaji: 'Kensa', id: 'Inspeksi / Pemeriksaan kualitas' },
+      { jp: 'ラインをとめる', romaji: 'Rain wo tomeru', id: 'Hentikan lini produksi', tip: 'Hentikan jika ada masalah — lebih baik terlambat dari barang cacat' },
+      { jp: 'シフト', romaji: 'Shifuto', id: 'Shift kerja' },
+      { jp: 'ざんぎょう (残業)', romaji: 'Zangyou', id: 'Lembur', tip: 'Overtime — sering terjadi di perusahaan Jepang' },
+      { jp: 'ユニフォーム', romaji: 'Yunifoomu', id: 'Seragam kerja' },
+      { jp: 'きゅうけい (休憩)', romaji: 'Kyuukei', id: 'Istirahat' },
+      { jp: 'たいきん (退勤)', romaji: 'Taikin', id: 'Absen pulang / clock out' },
+    ]
+  },
+  {
+    id: 'kehidupan-asrama', title: 'Kehidupan Asrama / Dorm', icon: '🏠', color: '#f4a261',
+    items: [
+      { jp: 'りょう (寮)', romaji: 'Ryou', id: 'Asrama', tip: 'Peserta magang biasanya tinggal di asrama perusahaan' },
+      { jp: 'ルールをまもってください', romaji: 'Ruuru wo mamotte kudasai', id: 'Tolong patuhi aturan', tip: 'Asrama punya aturan ketat: jam malam, kebersihan, tidak bawa tamu' },
+      { jp: 'そうじをしてください', romaji: 'Souji wo shite kudasai', id: 'Tolong bersihkan', tip: 'Kebersihan bersama diatur jadwal. Wajib ikut piket' },
+      { jp: 'でんきをけしてください (電気を消してください)', romaji: 'Denki wo keshite kudasai', id: 'Tolong matikan lampu', tip: 'Hemat energi sangat ditekankan' },
+      { jp: 'うるさくしないでください', romaji: 'Urusaku shinai de kudasai', id: 'Tolong jangan berisik', tip: 'Jam malam biasanya ketat. Jaga ketenangan asrama' },
+      { jp: 'ごみはきちんとすてください', romaji: 'Gomi wa kichin to sutete kudasai', id: 'Buang sampah pada tempatnya', tip: 'Pemilahan sampah ketat — periksa jadwal & kategori di asrama' },
+    ]
+  },
+]
+
+// ─── COUNTER WORDS (助数詞) ────────────────────────────────────────────────────
+export const COUNTERS = [
+  {
+    id: 'hito', counter: '〜人 (にん/り)', use: 'Menghitung orang',
+    examples: [
+      { n: 1, jp: 'ひとり', romaji: 'hitori', note: '(tidak pakai にん)' },
+      { n: 2, jp: 'ふたり', romaji: 'futari', note: '(tidak pakai にん)' },
+      { n: 3, jp: 'さんにん', romaji: 'san-nin', note: '' },
+      { n: 4, jp: 'よにん', romaji: 'yo-nin', note: '' },
+      { n: 5, jp: 'ごにん', romaji: 'go-nin', note: '' },
+      { n: 10, jp: 'じゅうにん', romaji: 'juu-nin', note: '' },
+    ]
+  },
+  {
+    id: 'hon', counter: '〜本 (ほん)', use: 'Benda panjang (botol, pensil, pipa, lengan)',
+    examples: [
+      { n: 1, jp: 'いっぽん', romaji: 'ippon', note: '' },
+      { n: 2, jp: 'にほん', romaji: 'nihon', note: '' },
+      { n: 3, jp: 'さんぼん', romaji: 'sanbon', note: '' },
+      { n: 4, jp: 'よんほん', romaji: 'yonhon', note: '' },
+      { n: 6, jp: 'ろっぽん', romaji: 'roppon', note: '' },
+      { n: 10, jp: 'じゅっぽん', romaji: 'juppon', note: '' },
+    ]
+  },
+  {
+    id: 'mai', counter: '〜枚 (まい)', use: 'Benda tipis & datar (kertas, piring, baju, papan)',
+    examples: [
+      { n: 1, jp: 'いちまい', romaji: 'ichi-mai', note: '' },
+      { n: 2, jp: 'にまい', romaji: 'ni-mai', note: '' },
+      { n: 3, jp: 'さんまい', romaji: 'san-mai', note: '' },
+      { n: 5, jp: 'ごまい', romaji: 'go-mai', note: '' },
+      { n: 10, jp: 'じゅうまい', romaji: 'juu-mai', note: '' },
+    ]
+  },
+  {
+    id: 'ko', counter: '〜個 (こ)', use: 'Benda kecil bulat (apel, telur, kancing, batu)',
+    examples: [
+      { n: 1, jp: 'いっこ', romaji: 'ikko', note: '' },
+      { n: 2, jp: 'にこ', romaji: 'ni-ko', note: '' },
+      { n: 3, jp: 'さんこ', romaji: 'san-ko', note: '' },
+      { n: 5, jp: 'ごこ', romaji: 'go-ko', note: '' },
+      { n: 10, jp: 'じゅっこ', romaji: 'jukko', note: '' },
+    ]
+  },
+  {
+    id: 'dai', counter: '〜台 (だい)', use: 'Kendaraan & mesin (mobil, motor, komputer, mesin)',
+    examples: [
+      { n: 1, jp: 'いちだい', romaji: 'ichi-dai', note: '' },
+      { n: 2, jp: 'にだい', romaji: 'ni-dai', note: '' },
+      { n: 3, jp: 'さんだい', romaji: 'san-dai', note: '' },
+      { n: 5, jp: 'ごだい', romaji: 'go-dai', note: '' },
+    ]
+  },
+  {
+    id: 'satsu', counter: '〜冊 (さつ)', use: 'Buku & majalah',
+    examples: [
+      { n: 1, jp: 'いっさつ', romaji: 'issatsu', note: '' },
+      { n: 2, jp: 'にさつ', romaji: 'ni-satsu', note: '' },
+      { n: 3, jp: 'さんさつ', romaji: 'san-satsu', note: '' },
+      { n: 5, jp: 'ごさつ', romaji: 'go-satsu', note: '' },
+    ]
+  },
+  {
+    id: 'hiki', counter: '〜匹 (ひき)', use: 'Hewan kecil (kucing, anjing, ikan)',
+    examples: [
+      { n: 1, jp: 'いっぴき', romaji: 'ippiki', note: '' },
+      { n: 2, jp: 'にひき', romaji: 'ni-hiki', note: '' },
+      { n: 3, jp: 'さんびき', romaji: 'sanbiki', note: '' },
+      { n: 5, jp: 'ごひき', romaji: 'go-hiki', note: '' },
+    ]
+  },
+  {
+    id: 'tsu', counter: '〜つ (ひとつ～とお)', use: 'Cara hitung umum (1-10) untuk benda apapun',
+    examples: [
+      { n: 1, jp: 'ひとつ', romaji: 'hitotsu', note: '' },
+      { n: 2, jp: 'ふたつ', romaji: 'futatsu', note: '' },
+      { n: 3, jp: 'みっつ', romaji: 'mittsu', note: '' },
+      { n: 4, jp: 'よっつ', romaji: 'yottsu', note: '' },
+      { n: 5, jp: 'いつつ', romaji: 'itsutsu', note: '' },
+      { n: 6, jp: 'むっつ', romaji: 'muttsu', note: '' },
+      { n: 7, jp: 'ななつ', romaji: 'nanatsu', note: '' },
+      { n: 8, jp: 'やっつ', romaji: 'yattsu', note: '' },
+      { n: 9, jp: 'ここのつ', romaji: 'kokonotsu', note: '' },
+      { n: 10, jp: 'とお', romaji: 'too', note: '' },
+    ]
+  },
+]
+
+// ─── KATA KERJA LANJUTAN ─────────────────────────────────────────────────────
+export const VERB_ADVANCED = [
+  {
+    id: 'te-form', title: 'Bentuk Te (〜て)', icon: '🔗',
+    desc: 'Bentuk て digunakan untuk menyambung kalimat, menyatakan sedang melakukan, dan meminta tolong.',
+    rules: [
+      { group: 'Kata kerja る (ichidan)', rule: 'Ganti ます → て', example: 'たべます → たべて (makan → sedang makan)' },
+      { group: 'Kata kerja う (godan) — く', rule: 'く → いて', example: 'かきます → かいて (menulis)' },
+      { group: 'Kata kerja う (godan) — ぐ', rule: 'ぐ → いで', example: 'およぎます → およいで (berenang)' },
+      { group: 'Kata kerja う (godan) — す', rule: 'す → して', example: 'はなします → はなして (bicara)' },
+      { group: 'Kata kerja う (godan) — つ・る・う', rule: '→ って', example: 'まちます → まって (menunggu)' },
+      { group: 'Kata kerja う (godan) — む・ぶ・ぬ', rule: '→ んで', example: 'のみます → のんで (minum)' },
+      { group: 'Pengecualian (fukisoku)', rule: 'します → して / きます → きて', example: 'べんきょうします → べんきょうして' },
+    ],
+    patterns: [
+      { pattern: 'V-て + います', use: 'Sedang melakukan (present continuous)', ex: 'たべています', tr: 'Sedang makan' },
+      { pattern: 'V-て + ください', use: 'Tolong lakukan', ex: 'みてください', tr: 'Tolong lihat' },
+      { pattern: 'V-て + もいいですか', use: 'Bolehkah saya melakukan ~?', ex: 'はいってもいいですか', tr: 'Bolehkah saya masuk?' },
+      { pattern: 'V-て + はいけません', use: 'Dilarang / tidak boleh', ex: 'はいってはいけません', tr: 'Dilarang masuk' },
+    ]
+  },
+  {
+    id: 'nai-form', title: 'Bentuk Negatif (〜ない)', icon: '🚫',
+    desc: 'Bentuk ない untuk menyatakan "tidak melakukan" dalam percakapan informal atau dengan pola tertentu.',
+    rules: [
+      { group: 'Kata kerja る (ichidan)', rule: 'Ganti る → ない', example: 'たべる → たべない (tidak makan)' },
+      { group: 'Kata kerja う (godan)', rule: 'Ganti ～う → ～あない', example: 'かく → かかない (tidak menulis)' },
+      { group: 'Pengecualian', rule: 'する → しない / くる → こない', example: 'べんきょうする → べんきょうしない' },
+    ],
+    patterns: [
+      { pattern: 'V-ない + でください', use: 'Tolong jangan lakukan', ex: 'はいらないでください', tr: 'Tolong jangan masuk' },
+      { pattern: 'V-ない + といけません', use: 'Harus melakukan', ex: 'たべないといけません', tr: 'Harus makan' },
+      { pattern: 'V-ない + ほうがいい', use: 'Lebih baik tidak melakukan', ex: 'たべないほうがいい', tr: 'Lebih baik tidak makan' },
+    ]
+  },
+  {
+    id: 'tai-form', title: 'Ingin Melakukan (〜たい)', icon: '💭',
+    desc: 'Gunakan たい setelah bentuk ます (tanpa ます) untuk menyatakan keinginan.',
+    rules: [
+      { group: 'Rumus', rule: 'V-ます (tanpa ます) + たい + です', example: 'たべます → たべたいです (ingin makan)' },
+      { group: 'Negatif', rule: 'V-たく + ないです', example: 'たべたくないです (tidak ingin makan)' },
+      { group: 'Lampau', rule: 'V-たかった + です', example: 'たべたかったです (tadi ingin makan)' },
+    ],
+    patterns: [
+      { pattern: '〜に いきたいです', use: 'Ingin pergi ke ~', ex: 'にほんに いきたいです', tr: 'Ingin pergi ke Jepang' },
+      { pattern: '〜を たべたいです', use: 'Ingin makan ~', ex: 'すしを たべたいです', tr: 'Ingin makan sushi' },
+      { pattern: '〜が したいです', use: 'Ingin melakukan ~', ex: 'べんきょうが したいです', tr: 'Ingin belajar' },
+    ]
+  },
+  {
+    id: 'koto-ga-dekiru', title: 'Kemampuan (〜ことができる)', icon: '💪',
+    desc: 'Menyatakan "bisa" atau "mampu" melakukan sesuatu.',
+    rules: [
+      { group: 'Rumus formal', rule: 'V-る + ことができます', example: 'にほんごをはなすことができます (bisa berbahasa Jepang)' },
+      { group: 'Rumus informal', rule: 'V-る + ことができる', example: 'およぐことができる (bisa berenang)' },
+      { group: 'Negatif', rule: 'V-る + ことができません', example: 'うんてんすることができません (tidak bisa mengemudi)' },
+    ],
+    patterns: [
+      { pattern: 'N + が + できます', use: 'Bisa ~ (untuk skill/bahasa)', ex: 'にほんごができます', tr: 'Bisa bahasa Jepang' },
+      { pattern: 'N + が + できません', use: 'Tidak bisa ~', ex: 'うんてんができません', tr: 'Tidak bisa mengemudi' },
+    ]
+  },
+]
+
+// ─── JLPT N5 DRILL ────────────────────────────────────────────────────────────
+export const JLPT_N5_DRILL = {
+  mojigoi: [
+    // Kanji reading questions
+    { q: '日本語', choices: ['にほんご', 'にっぽんご', 'にほんぐ', 'にっぽんぐ'], answer: 'にほんご', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '何時ですか', choices: ['なんじですか', 'なにじですか', 'なんときですか', 'なにときですか'], answer: 'なんじですか', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '先生', choices: ['せんせい', 'せんしょう', 'さきせい', 'さきしょう'], answer: 'せんせい', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '大学生', choices: ['だいがくせい', 'おおがくせい', 'たいがくせい', 'だいがくしょう'], answer: 'だいがくせい', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '電車', choices: ['でんしゃ', 'でんしゃあ', 'でんじゃ', 'てんしゃ'], answer: 'でんしゃ', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '毎日', choices: ['まいにち', 'まいひ', 'まいじつ', 'たいにち'], answer: 'まいにち', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '学校', choices: ['がっこう', 'がくこう', 'がっこ', 'がくしょう'], answer: 'がっこう', type: 'kanji-read', label: 'Cara baca yang benar?' },
+    { q: '水曜日', choices: ['すいようび', 'みずようび', 'すいようにち', 'みずようにち'], answer: 'すいようび', type: 'kanji-read', label: 'Cara baca yang benar?' },
+  ],
+  bunpou: [
+    { q: 'わたし＿がくせいです。', choices: ['は', 'が', 'を', 'に'], answer: 'は', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'がっこう＿いきます。', choices: ['に', 'を', 'は', 'で'], answer: 'に', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'パン＿たべます。', choices: ['を', 'が', 'は', 'に'], answer: 'を', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'バス＿いきます。', choices: ['で', 'に', 'を', 'が'], answer: 'で', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'これ＿わたしのほんです。', choices: ['は', 'が', 'を', 'で'], answer: 'は', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'わたし＿ほん。(kepunyaan)', choices: ['の', 'は', 'に', 'で'], answer: 'の', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'すし＿すきです。', choices: ['が', 'は', 'を', 'に'], answer: 'が', type: 'particle', label: 'Pilih partikel yang tepat' },
+    { q: 'きのう＿たべませんでした。', choices: ['は', 'を', 'に', 'で'], answer: 'は', type: 'particle', label: 'Pilih partikel yang tepat (topik)' },
+  ],
+  vocabulary: [
+    { q: 'あたらしい', choices: ['Baru', 'Lama', 'Besar', 'Kecil'], answer: 'Baru', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'むずかしい', choices: ['Sulit', 'Mudah', 'Menyenangkan', 'Membosankan'], answer: 'Sulit', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'たのしい', choices: ['Menyenangkan', 'Sedih', 'Marah', 'Takut'], answer: 'Menyenangkan', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'やすい', choices: ['Murah', 'Mahal', 'Tinggi', 'Rendah'], answer: 'Murah', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'いそがしい', choices: ['Sibuk', 'Santai', 'Sehat', 'Sakit'], answer: 'Sibuk', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'ひろい', choices: ['Luas', 'Sempit', 'Tinggi', 'Rendah'], answer: 'Luas', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'あかるい', choices: ['Terang', 'Gelap', 'Panas', 'Dingin'], answer: 'Terang', type: 'vocab', label: 'Apa artinya?' },
+    { q: 'さむい', choices: ['Dingin', 'Panas', 'Hangat', 'Sejuk'], answer: 'Dingin', type: 'vocab', label: 'Apa artinya?' },
+  ],
+}
+
+// ─── UPDATE MODULES CONFIG ────────────────────────────────────────────────────
+export const NEW_MODULES = [
+  { id:'budaya',      title:'Budaya Jepang',     sub:'日本文化',  desc:'Etos kerja, salam di kantor, norma sosial, kehidupan sehari-hari di Jepang.', level:'Langkah 7', icon:'🎌', color:'#e76f51', bg:'rgba(231,111,81,0.10)',  total:34 },
+  { id:'bahasa-kerja',title:'Bahasa Kerja',       sub:'職場言語',  desc:'Keselamatan kerja, instruksi pabrik, kosakata industri & kehidupan asrama.', level:'Langkah 8', icon:'🏭', color:'#2a9d8f', bg:'rgba(42,157,143,0.10)', total:36 },
+  { id:'counter',     title:'Kata Bilangan',      sub:'助数詞',    desc:'Cara menghitung benda: 一本、二枚、三台... sangat penting untuk sehari-hari.', level:'Langkah 9', icon:'🔢', color:'#457b9d', bg:'rgba(69,123,157,0.10)', total:40 },
+  { id:'verb-advanced',title:'Kata Kerja Lanjutan', sub:'動詞活用', desc:'Bentuk て, ない, たい, dan ことができる — kunci berbicara lancar.', level:'Langkah 10', icon:'⚡', color:'#8338ec', bg:'rgba(131,56,236,0.10)', total:20 },
+  { id:'jlpt-n5',     title:'JLPT N5 Drill',      sub:'N5試験',   desc:'Latihan soal format JLPT N5: kanji, partikel, kosakata. Siap ujian!', level:'Langkah 11', icon:'📝', color:'#e63946', bg:'rgba(230,57,70,0.10)',  total:24 },
+]
