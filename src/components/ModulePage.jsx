@@ -578,22 +578,8 @@ function JlptInfoLearn({ c }) {
 
 // ── QUIZ ──────────────────────────────────────────────────────────────────────
 function QuizContent({ mod, c, progress, onSaveProgress }) {
-  const qMap = {
-    'hiragana-dasar':'hiragana','hiragana-lanjutan':'hiragana',
-    'katakana-dasar':'katakana','katakana-lanjutan':'katakana',
-    'angka':'vocabulary','sapaan-dasar':'vocabulary',
-    'kata-ganti-tanya':'conversation','waktu-kalender':'vocabulary',
-    'kosakata-benda':'vocabulary','kata-sifat':'vocabulary',
-    'kata-kerja-gol1':'vocabulary','kata-kerja-gol23':'vocabulary',
-    'partikel-1':'grammar','partikel-2':'grammar',
-    'pola-kalimat':'grammar','konjugasi-kk':'grammar',
-    'te-form':'grammar','pola-lanjutan':'grammar',
-    'kanji-1':'kanji','kanji-2':'kanji',
-    'conv-perkenalan':'conversation','conv-sehari':'conversation',
-    'conv-belanja':'conversation','conv-transport':'conversation',
-    'conv-darurat':'conversation','jlpt-n5':'jlpt-n5',
-  }
-  const qId = qMap[mod.id] || mod.id
+  // Gunakan mod.id langsung — buildQuiz di quiz.js sudah handle semua case
+  const qId = mod.id
   const [qs,setQs]       = useState(()=>buildQuiz(qId,10))
   const [idx,setIdx]     = useState(0)
   const [sel,setSel]     = useState(null)
