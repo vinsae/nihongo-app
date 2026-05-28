@@ -507,65 +507,195 @@ export const KANJI_N5 = [
 ]
 
 // ─── GRAMMAR ──────────────────────────────────────────────────────────────────
+// ─── MODULE INFO (penjelasan tiap tahapan) ────────────────────────────────────
+export const MODULE_INFO = {
+  hiragana: {
+    why: 'Hiragana adalah alfabet pertama yang WAJIB dikuasai. Hampir semua kata Jepang bisa ditulis dengan Hiragana — tanpa ini, kamu tidak bisa membaca apapun.',
+    what: ['46 huruf dasar (あ～ん)', '25 huruf dakuten — bersuara (が、ざ、だ、ば、ぱ)', '33 huruf kombinasi (きゃ、しゃ、ちゃ...)', 'Cara baca dan penulisan tiap huruf'],
+    time: '1–2 minggu (belajar 5 huruf/hari)',
+    jlpt: 'Semua seksi JLPT menggunakan Hiragana. Ini adalah syarat mutlak!',
+    tip: 'Tulis setiap huruf berulang kali sambil ucapkan bunyinya. Gunakan mnemonik visual — あ mirip tanda baca "a" dengan kaki.',
+    level: 'Mutlak untuk Pemula',
+    color: '#e63946',
+  },
+  katakana: {
+    why: 'Katakana dipakai untuk kata serapan asing (10-15% teks Jepang), nama orang asing, merek, dan kata penekanan. Jika tahu Hiragana, Katakana lebih cepat dipelajari karena bunyinya sama.',
+    what: ['46 huruf dasar (ア～ン)', '25 huruf dakuten bersuara (ガ、ザ、ダ、バ、パ)', '33 huruf kombinasi (キャ、シャ...)', 'Membaca nama & kata serapan Barat'],
+    time: '1 minggu (setelah hafal Hiragana)',
+    jlpt: 'Moji-Goi section — soal membaca kata Katakana sering muncul.',
+    tip: 'Latih membaca nama merek dan produk Jepang setiap hari. コーヒー (kopi), テレビ (TV), スマートフォン (smartphone).',
+    level: 'Pemula Wajib',
+    color: '#457b9d',
+  },
+  vocabulary: {
+    why: 'JLPT N5 mengharuskan penguasaan ~800 kata kosakata. Kosakata adalah bahan bakar untuk berkomunikasi — semakin banyak kata yang kamu tahu, semakin lancar kamu berbicara.',
+    what: ['Angka 0 – 1.000.000', 'Sapaan & ekspresi sehari-hari (24 frasa)', 'Hari, bulan, dan musim', 'Waktu & ekspresi temporal', 'Warna, keluarga, makanan, tempat', 'Kata sifat, kata kerja, tubuh, cuaca, transportasi'],
+    time: '4–6 minggu (pelajari 1 kategori per 3 hari)',
+    jlpt: 'Moji-Goi section (25 menit) — menguji kosakata dan kanji.',
+    tip: 'Gunakan metode "kalimat contoh" — jangan hafal kata satu per satu, tapi hafalkan dalam kalimat. Misal: "まいにち ごはん を たべます" bukan cuma "ごはん = nasi".',
+    level: 'N5 Dasar',
+    color: '#2a9d8f',
+  },
+  grammar: {
+    why: 'Tata bahasa adalah kerangka kalimat Jepang. Tanpa grammar, kata-kata yang kamu hafal tidak bisa disusun menjadi kalimat yang benar. JLPT N5 menguji ~80 poin grammar dasar.',
+    what: ['15 partikel penting (は が を に で の と も へ から まで か ね よ)', 'Pola kalimat dasar (S は N/Adj/V です)', 'Konjugasi kata kerja ます (positif, negatif, lampau)', 'Konjugasi kata sifat i-adj & na-adj', 'Bentuk て (progressive, permintaan, izin)', 'Ekspresi: たい ましょう ことができる あります/います', 'Kata tanya: なに どこ いつ だれ いくら', 'Kata demonstratif: これ/それ/あれ, ここ/そこ/あそこ'],
+    time: '4–6 minggu (pelajari 1 topik per 3–4 hari)',
+    jlpt: 'Bunpou-Dokkai section (50 menit) — terbesar! Menguji partikel, konjugasi, dan pola kalimat.',
+    tip: 'Jangan cuma hafal aturan — buat kalimat sendiri! Misal: setelah belajar partikel に, buat 5 kalimat dengan に tentang rutinitas harianmu.',
+    level: 'N5 Inti',
+    color: '#e9c46a',
+  },
+  kanji: {
+    why: 'JLPT N5 membutuhkan penguasaan ~100 kanji dasar. Kanji mempercepat membaca teks Jepang karena satu karakter mewakili satu kata/konsep. Kanji N5 adalah yang paling umum dipakai sehari-hari.',
+    what: ['50 kanji N5 dengan arti', 'On-yomi (cara baca Cina)', 'Kun-yomi (cara baca Jepang asli)', 'Contoh kata untuk tiap kanji', 'Hari dalam seminggu dari kanji (日月火水木金土)'],
+    time: '4–6 minggu (hafal 5 kanji/hari + review)',
+    jlpt: 'Moji-Goi section — membaca kanji dan memilih arti yang benar.',
+    tip: 'Gunakan sistem spaced repetition (SRS) seperti Anki. Visualisasikan makna kanji: 山 = puncak-puncak gunung, 川 = aliran sungai, 木 = pohon dengan akar.',
+    level: 'N5 Wajib',
+    color: '#8338ec',
+  },
+  conversation: {
+    why: 'Tujuan akhir belajar bahasa adalah BERBICARA. Modul ini mengajarkan frasa siap pakai untuk situasi nyata — dari perkenalan hingga darurat medis. Ini yang langsung bisa kamu gunakan hari ini!',
+    what: ['Perkenalan diri (7 frasa)', 'Dialog di restoran (7 frasa)', 'Dialog berbelanja (7 frasa)', 'Meminta bantuan & arah (7 frasa)', 'Menggunakan transportasi (6 frasa)', 'Situasi darurat & dokter (6 frasa)'],
+    time: '2–3 minggu (latih dengan teknik shadowing setiap hari)',
+    jlpt: 'Chokai (Listening) section (30 menit) — mendengar percakapan situasional.',
+    tip: 'Shadowing = dengar audio → tirukan langsung dengan suara keras tanpa jeda. Ini cara tercepat memperbaiki pengucapan dan kelancaran bicara.',
+    level: 'N5 Praktikal',
+    color: '#f4a261',
+  },
+}
+
+// ─── GRAMMAR (80+ poin N5 lengkap) ──────────────────────────────────────────
 export const GRAMMAR = [
+  // ── 1. PARTIKEL ──────────────────────────────────────────────────────────
   {
-    id: 'particles', title: 'Partikel Dasar', icon: '📌',
+    id: 'particles', title: 'Partikel', icon: '📌',
+    intro: 'Partikel adalah kata pendek yang menempel setelah kata benda/kata kerja untuk menunjukkan fungsinya dalam kalimat. Ini adalah fondasi grammar Jepang — WAJIB hafal semua!',
     items: [
-      { term:'は (wa)', desc:'Menandai topik kalimat', ex:'わたし は がくせい です', tr:'Saya adalah pelajar', tip:'は dibaca "wa" bukan "ha" saat jadi partikel' },
-      { term:'が (ga)', desc:'Menandai subjek kalimat', ex:'ねこ が います', tr:'Ada kucing', tip:'Dipakai saat memperkenalkan subjek baru' },
-      { term:'を (wo)', desc:'Menandai objek langsung', ex:'パン を たべます', tr:'Makan roti', tip:'を hanya dipakai sebagai partikel' },
-      { term:'に (ni)', desc:'Arah / waktu / lokasi', ex:'がっこう に いきます', tr:'Pergi ke sekolah', tip:'Juga untuk "jam": 三時に（さんじに）= jam 3' },
-      { term:'で (de)', desc:'Lokasi aksi / alat / cara', ex:'バス で いきます', tr:'Pergi naik bus', tip:'Lokasi aksi: 図書館で勉強します' },
-      { term:'の (no)', desc:'Kepemilikan / modifikasi', ex:'わたし の ほん', tr:'Buku saya', tip:'Seperti "punya/milik" dalam bahasa Indonesia' },
-      { term:'と (to)', desc:'Dan / Bersama dengan', ex:'ともだち と いきます', tr:'Pergi bersama teman', tip:'Untuk menyebutkan dua hal: りんごとみかん' },
-      { term:'も (mo)', desc:'Juga / Pun', ex:'わたし も がくせい です', tr:'Saya juga pelajar', tip:'Menggantikan は atau が: わたしも = saya juga' },
-      { term:'か (ka)', desc:'Membentuk kalimat tanya', ex:'がくせい ですか？', tr:'Apakah kamu pelajar?', tip:'Di akhir kalimat, nada naik' },
-      { term:'ね (ne)', desc:'Konfirmasi / persetujuan', ex:'いい です ね', tr:'Bagus ya', tip:'Seperti "ya" atau "kan" dalam bahasa Indonesia' },
+      { term:'は (wa)', desc:'Menandai TOPIK kalimat', ex:'わたし は がくせい です', tr:'Saya adalah pelajar', tip:'⚠️ は dibaca "wa" bukan "ha" saat jadi partikel. Berbeda dari が yang menandai subjek.' },
+      { term:'が (ga)', desc:'Menandai SUBJEK — info baru atau penekanan', ex:'ねこ が います', tr:'Ada kucing (ini)', tip:'Pakai が untuk info baru. は untuk topik yang sudah diketahui. Ini perbedaan paling sulit N5!' },
+      { term:'を (wo)', desc:'Menandai OBJEK langsung kata kerja', ex:'パン を たべます', tr:'Makan roti', tip:'を hanya dipakai sebagai partikel, tidak berdiri sendiri. Dibaca "o" bukan "wo".' },
+      { term:'に (ni)', desc:'Arah tujuan / waktu spesifik / lokasi keberadaan', ex:'がっこう に いきます', tr:'Pergi ke sekolah', tip:'3 fungsi: 1) Tujuan: 学校に行く 2) Waktu: 3時に起きる 3) Keberadaan: 机に本がある' },
+      { term:'で (de)', desc:'Lokasi aksi / alat / cara / bahan', ex:'としょかん で べんきょうします', tr:'Belajar di perpustakaan', tip:'Bedakan: に untuk keberadaan (ada di), で untuk aksi (melakukan di). 公園にいる vs 公園で遊ぶ' },
+      { term:'へ (e)', desc:'Arah menuju (lebih menekankan arah, bisa gantikan に)', ex:'にほん へ いきます', tr:'Pergi ke Jepang', tip:'Dibaca "e" bukan "he". Hampir sama dengan に untuk arah, tapi に lebih umum dipakai.' },
+      { term:'の (no)', desc:'Kepemilikan / modifikasi nomina / penjelasan', ex:'わたし の ほん', tr:'Buku saya (buku kepunyaan saya)', tip:'Seperti "milik/punya". Juga bisa: 日本語の先生 = guru bahasa Jepang (の menghubungkan dua nomina)' },
+      { term:'と (to)', desc:'Dan (menyebut semua item) / Bersama dengan', ex:'りんご と みかん を たべます', tr:'Makan apel dan jeruk', tip:'Bedakan dengan や: と menyebut semua, や hanya contoh beberapa. りんごとみかん = hanya itu dua.' },
+      { term:'や (ya)', desc:'Dan lain-lain (menyebut beberapa contoh)', ex:'りんご や みかん など', tr:'Apel, jeruk, dan lain-lain', tip:'Menunjukkan daftar tidak lengkap. Sering diikuti など (dan sebagainya).' },
+      { term:'も (mo)', desc:'Juga / Pun — menambahkan hal serupa', ex:'わたし も がくせい です', tr:'Saya pun (juga) pelajar', tip:'Gantikan は atau が. わたしも = saya juga. 田中さんも来ました = Tanaka-san juga datang.' },
+      { term:'から (kara)', desc:'Dari (titik asal) / Karena (sebab)', ex:'にほん から きました', tr:'Datang dari Jepang', tip:'2 fungsi: 1) Asal: 9時から = dari jam 9 2) Alasan: 雨だから = karena hujan' },
+      { term:'まで (made)', desc:'Sampai / Hingga (batas waktu atau tempat)', ex:'えき まで あるきます', tr:'Jalan kaki sampai stasiun', tip:'Sering berpasangan: から～まで = dari～sampai. 9時から5時まで = dari jam 9 sampai jam 5.' },
+      { term:'か (ka)', desc:'Membentuk kalimat TANYA', ex:'がくせい です か？', tr:'Apakah (kamu) pelajar?', tip:'Tambahkan か di akhir kalimat → jadi pertanyaan. Intonasi naik. Jawab: はい (ya) / いいえ (tidak).' },
+      { term:'ね (ne)', desc:'Mencari persetujuan / konfirmasi lawan bicara', ex:'おいしい です ね', tr:'Enak ya (setuju kan?)', tip:'Seperti "ya" atau "kan" dalam bahasa Indonesia. Mengundang respon dari lawan bicara.' },
+      { term:'よ (yo)', desc:'Menegaskan / memberikan info baru kepada lawan bicara', ex:'これ は おいしい です よ', tr:'Ini enak lho (saya kasih tahu)', tip:'Dipakai saat memberikan info yang lawan bicara belum tahu. Lebih tegas dari ね.' },
     ]
   },
+
+  // ── 2. KATA KERJA GOLONGAN (動詞の分類) ───────────────────────────────────
   {
-    id: 'patterns', title: 'Pola Kalimat', icon: '🏗️',
+    id: 'verb-groups', title: 'Kata Kerja: 3 Golongan', icon: '⚡',
+    intro: 'Semua kata kerja Jepang dibagi 3 golongan. Mengetahui golongan = tahu cara konjugasinya. Ini adalah kunci membentuk semua bentuk kata kerja!',
     items: [
-      { term:'S は N です', desc:'Menyatakan identitas/profesi', ex:'わたし は がくせい です', tr:'Saya adalah pelajar', tip:'Untuk perkenalan diri' },
-      { term:'S は Adj です', desc:'Menyatakan sifat/keadaan', ex:'きょう は あつい です', tr:'Hari ini panas', tip:'i-adj langsung + です' },
-      { term:'S は V ます', desc:'Kalimat aksi (polite/present)', ex:'まいにち べんきょう します', tr:'Belajar setiap hari', tip:'Bentuk ます untuk formal' },
-      { term:'S は V ません', desc:'Kalimat negatif', ex:'にく を たべません', tr:'Tidak makan daging', tip:'ません = tidak (present)' },
-      { term:'S は V ました', desc:'Kalimat lampau', ex:'きのう いきました', tr:'Kemarin pergi', tip:'ました = sudah / tadi' },
-      { term:'S は V ませんでした', desc:'Negatif lampau', ex:'きのう たべませんでした', tr:'Kemarin tidak makan', tip:'ませんでした = tidak (past)' },
-      { term:'~ を ください', desc:'Meminta sesuatu', ex:'みず を ください', tr:'Tolong berikan air', tip:'Di toko/restoran, sopan tapi tidak super formal' },
-      { term:'~ は どこ ですか', desc:'Menanyakan lokasi', ex:'トイレ は どこ ですか', tr:'Di mana toilet?', tip:'Sangat berguna saat traveling ke Jepang!' },
-      { term:'~ は いくら ですか', desc:'Menanyakan harga', ex:'これ は いくら ですか', tr:'Ini berapa harganya?', tip:'いくら = berapa (harga)' },
-      { term:'～てください', desc:'Meminta melakukan sesuatu', ex:'ゆっくり はなして ください', tr:'Tolong bicara pelan', tip:'Bentuk て + ください' },
+      { term:'GOLONGAN 1 — 五段動詞 (Godan Doushi)', desc:'Akhiran: -u, -ku, -gu, -su, -tsu, -nu, -bu, -mu, -ru (bukan i/e sebelum ru)', ex:'かく (kaku) · のむ (nomu) · はなす (hanasu) · まつ (matsu) · よぶ (yobu)', tr:'Menulis · Minum · Berbicara · Menunggu · Memanggil', tip:'Cara ubah ke ます: ganti bunyi akhir ke baris i + ます. かく→かきます, のむ→のみます, はなす→はなします' },
+      { term:'Golongan 1 — contoh kata N5', desc:'Kata kerja Godan yang wajib hafal', ex:'いく(pergi) · くる(datang*) · かう(beli) · のる(naik) · おきる* · かえる(pulang)', tr:'*くる dan おきる pengecualian', tip:'かう→かいます, のる→のります, かえる→かえります' },
+      { term:'GOLONGAN 2 — 一段動詞 (Ichidan Doushi)', desc:'Akhiran: -iru atau -eru. Lebih mudah dikonjugasi!', ex:'たべる (taberu) · みる (miru) · おきる (okiru) · おしえる (oshieru)', tr:'Makan · Melihat · Bangun · Mengajar', tip:'Cara ubah ke ます: ganti る → ます saja! たべる→たべます, みる→みます, おきる→おきます' },
+      { term:'Golongan 2 — contoh kata N5', desc:'Kata kerja Ichidan yang wajib hafal', ex:'たべる · みる · おきる · ねる · きる(pakai) · でる(keluar) · おしえる · はじめる', tr:'Makan · Lihat · Bangun · Tidur · Pakai · Keluar · Ajar · Mulai', tip:'Semua mudah: buang る, tambah ます' },
+      { term:'GOLONGAN 3 — 不規則動詞 (Fukisoku Doushi)', desc:'HANYA 2 kata kerja: する dan くる. Tidak beraturan, WAJIB hafal!', ex:'する → します (melakukan) ・ くる → きます (datang)', tr:'する = melakukan, buat · くる = datang', tip:'する dipakai untuk: べんきょうする(belajar), うんどうする(olahraga), りょこうする(traveling) — kata benda + する = kata kerja!' },
+      { term:'する — kata kerja serbaguna', desc:'Kata benda + する = kata kerja', ex:'べんきょう する · うんどう する · でんわ する · りょこう する', tr:'Belajar · Olahraga · Menelepon · Traveling', tip:'Ini sangat berguna! Hampir semua kata serapan bisa jadi kata kerja: ドライブする, スポーツする' },
     ]
   },
+
+  // ── 3. KONJUGASI KATA KERJA ────────────────────────────────────────────────
   {
-    id: 'adjectives', title: 'Kata Sifat', icon: '🎨',
+    id: 'verb-conjugation', title: 'Konjugasi Kata Kerja', icon: '🔄',
+    intro: 'Dari bentuk ます (masu-kei), kamu bisa membuat semua bentuk yang dibutuhkan. Pelajari pola ini dan terapkan ke semua kata kerja!',
     items: [
-      { term:'おおきい (i-adj)', desc:'Besar', ex:'おおきい いえ', tr:'Rumah besar', tip:'Negatif: おおきくない' },
-      { term:'ちいさい (i-adj)', desc:'Kecil', ex:'ちいさい ねこ', tr:'Kucing kecil', tip:'Negatif: ちいさくない' },
-      { term:'あたらしい (i-adj)', desc:'Baru', ex:'あたらしい くるま', tr:'Mobil baru', tip:'Negatif: あたらしくない' },
-      { term:'たかい (i-adj)', desc:'Tinggi / Mahal', ex:'たかい やま', tr:'Gunung tinggi', tip:'Konteks menentukan arti' },
-      { term:'やすい (i-adj)', desc:'Murah', ex:'やすい ごはん', tr:'Makanan murah', tip:'Negatif: やすくない' },
-      { term:'おいしい (i-adj)', desc:'Enak', ex:'おいしい すし', tr:'Sushi enak', tip:'Kata penting di restoran!' },
-      { term:'たのしい (i-adj)', desc:'Menyenangkan', ex:'たのしい りょこう', tr:'Perjalanan menyenangkan', tip:'Negatif: たのしくない' },
-      { term:'きれい (na-adj)', desc:'Cantik / Bersih', ex:'きれい な はな', tr:'Bunga cantik', tip:'な-adj + な + nomina' },
-      { term:'すき (na-adj)', desc:'Suka', ex:'おちゃ が すき です', tr:'Saya suka teh', tip:'が すき です = suka ~' },
-      { term:'げんき (na-adj)', desc:'Sehat / Bersemangat', ex:'おげんき ですか？', tr:'Apa kabar?', tip:'Sapaan umum sehari-hari' },
+      { term:'Bentuk ます (Positif Sekarang/Akan)', desc:'Tindakan sekarang atau yang akan datang — formal/sopan', ex:'たべます · のみます · いきます · します', tr:'(Saya) makan · minum · pergi · melakukan', tip:'Ini adalah bentuk dasar yang dipelajari pertama. Formal, cocok untuk percakapan dengan orang yang belum akrab.' },
+      { term:'Bentuk ません (Negatif Sekarang)', desc:'Tidak melakukan sesuatu — sekarang/kebiasaan', ex:'にく を たべません · さけ を のみません', tr:'Tidak makan daging · Tidak minum alkohol', tip:'Rumus: ます → ません. Simpel! Hanya ganti satu suku kata.' },
+      { term:'Bentuk ました (Positif Lampau)', desc:'Sudah melakukan sesuatu — masa lalu', ex:'きのう すし を たべました', tr:'Kemarin (saya) makan sushi', tip:'Rumus: ます → ました. Untuk cerita kejadian yang sudah berlalu.' },
+      { term:'Bentuk ませんでした (Negatif Lampau)', desc:'Tidak melakukan di masa lalu', ex:'きのう がっこう に いきませんでした', tr:'Kemarin tidak pergi ke sekolah', tip:'Rumus: ます → ませんでした. Panjang tapi polanya konsisten.' },
+      { term:'Bentuk て (Te-form) — Golongan 1', desc:'Aturan te-form godan (ada 4 pola!)', ex:'かく→かいて · のむ→のんで · はなす→はなして · まつ→まって', tr:'Menulis→(て) · Minum→(んで) · Bicara→(して) · Tunggu→(って)', tip:'Golongan 1 punya 4 pola. く/ぐ→いて/いで, む/ぬ/ぶ→んで, す→して, つ/る/う→って' },
+      { term:'Bentuk て (Te-form) — Golongan 2 & 3', desc:'Te-form ichidan dan irregular — lebih mudah', ex:'たべる→たべて · みる→みて · する→して · くる→きて', tr:'Makan→(て) · Lihat→(て) · Lakukan→(して) · Datang→(きて)', tip:'Golongan 2: buang る, tambah て. Golongan 3: する→して, くる→きて (hafal!)' },
+      { term:'〜ている (Progressive)', desc:'Sedang melakukan sesuatu SEKARANG', ex:'いま ごはん を たべています', tr:'Sekarang sedang makan', tip:'Te-form + います = sedang ~. Mirip "-ing" dalam bahasa Inggris.' },
+      { term:'〜ていました (Progressive Lampau)', desc:'Sedang melakukan di masa lalu', ex:'きのう テレビ を みていました', tr:'Kemarin sedang menonton TV', tip:'Te-form + いました = sedang ~ (waktu lampau)' },
     ]
   },
+
+  // ── 4. KONJUGASI KATA SIFAT ────────────────────────────────────────────────
   {
-    id: 'verbs', title: 'Kata Kerja Dasar', icon: '⚡',
+    id: 'adjective-conjugation', title: 'Konjugasi Kata Sifat', icon: '🎨',
+    intro: 'Kata sifat Jepang ada 2 jenis: い-adjektiva dan な-adjektiva. Cara konjugasinya BERBEDA. Pahami perbedaannya dulu!',
     items: [
-      { term:'たべます → たべません', desc:'Makan (present → negatif)', ex:'にく を たべます', tr:'Makan daging', tip:'Rumus: ます → ません' },
-      { term:'たべます → たべました', desc:'Makan (present → lampau)', ex:'すし を たべました', tr:'Tadi makan sushi', tip:'Rumus: ます → ました' },
-      { term:'いきます → いきました', desc:'Pergi (present → lampau)', ex:'がっこう に いきました', tr:'Tadi pergi ke sekolah', tip:'Kata kerja gerak paling umum' },
-      { term:'います / あります', desc:'Ada (makhluk hidup / benda)', ex:'ねこ が います / ほん が あります', tr:'Ada kucing / Ada buku', tip:'います untuk hidup, あります untuk benda' },
-      { term:'わかります', desc:'Mengerti', ex:'にほんご が わかります', tr:'Mengerti bahasa Jepang', tip:'Diikuti が bukan を' },
-      { term:'できます', desc:'Bisa / Mampu', ex:'にほんご が できます', tr:'Bisa bahasa Jepang', tip:'Diikuti が bukan を' },
-      { term:'みます → みました', desc:'Melihat / Menonton', ex:'テレビ を みます', tr:'Menonton TV', tip:'Juga untuk "nonton film"' },
-      { term:'します', desc:'Melakukan (kata kerja serbaguna)', ex:'べんきょう を します', tr:'Belajar (melakukan belajar)', tip:'する + nomina = verba' },
-      { term:'てform + います', desc:'Sedang melakukan', ex:'たべています', tr:'Sedang makan', tip:'て-form + います = sedang ~' },
-      { term:'てform + ください', desc:'Tolong lakukan', ex:'みて ください', tr:'Tolong lihat', tip:'て-form + ください = tolong ~' },
+      { term:'い-adjektiva (i-keiyoushi) — Ciri', desc:'Selalu diakhiri huruf い. Bisa langsung sebelum nomina.', ex:'おおきい · ちいさい · あたらしい · たかい · あつい · さむい', tr:'Besar · Kecil · Baru · Mahal/Tinggi · Panas · Dingin', tip:'⚠️ いい (bagus) dan きれい pengecualian! きれい berakhiran い tapi adalah な-adjektiva.' },
+      { term:'い-adj: Positif → Negatif', desc:'Ganti い → くない', ex:'たかい → たかくない · おいしい → おいしくない', tr:'Mahal → Tidak mahal · Enak → Tidak enak', tip:'Rumus konsisten: buang い, tambah くない. Contoh: あつい→あつくない = tidak panas.' },
+      { term:'い-adj: Positif → Lampau', desc:'Ganti い → かった', ex:'たかい → たかかった · むずかしい → むずかしかった', tr:'(Dulunya) mahal · (Dulunya) sulit', tip:'Rumus: buang い, tambah かった. Ditambah です menjadi formal: たかかったです.' },
+      { term:'い-adj: Negatif Lampau', desc:'Ganti い → くなかった', ex:'たかくなかった · さむくなかった', tr:'(Dulu) tidak mahal · (Dulu) tidak dingin', tip:'Empat bentuk: たかい(+now) たかくない(-now) たかかった(+past) たかくなかった(-past)' },
+      { term:'い-adj: Menyambung kalimat (〜くて)', desc:'Ganti い → くて untuk menyambung ke kalimat berikutnya', ex:'このへや は ひろくて あかるい です', tr:'Kamar ini luas dan terang', tip:'くて dipakai untuk menyambung 2 sifat positif. Mirip "dan" dalam bahasa Indonesia.' },
+      { term:'な-adjektiva (na-keiyoushi) — Ciri', desc:'Butuh な sebelum nomina. Tidak berakhiran い (kecuali きれい, きらい, げんき)', ex:'きれい · しずか · げんき · すき · じょうず · にぎやか', tr:'Cantik · Tenang · Sehat · Suka · Pandai · Ramai', tip:'Cara pakai: きれい な へや = kamar yang cantik. な harus ada di depan nomina!' },
+      { term:'な-adj: Negatif', desc:'Tambahkan じゃない / ではない setelah な-adj (tanpa な)', ex:'しずか じゃない · きれい じゃない', tr:'Tidak tenang · Tidak cantik', tip:'Rumus: buang な, tambah じゃない/ではない. ではない lebih formal dari じゃない.' },
+      { term:'な-adj: Lampau', desc:'Tambahkan だった / でした setelah な-adj', ex:'きれい だった · げんき でした', tr:'(Dulu) cantik · (Dulu) sehat', tip:'Positif lampau: きれいだった/でした. Negatif lampau: きれいじゃなかった/ではなかった.' },
+    ]
+  },
+
+  // ── 5. POLA KALIMAT UTAMA N5 ──────────────────────────────────────────────
+  {
+    id: 'sentence-patterns', title: 'Pola Kalimat N5', icon: '🏗️',
+    intro: 'Inilah 80+ poin grammar N5 yang diuji JLPT. Pelajari satu per satu dan buat kalimat sendiri untuk setiap pola!',
+    items: [
+      { term:'〜は〜です / じゃないです', desc:'Menyatakan/menolak identitas atau sifat', ex:'わたし は にほんじん じゃないです', tr:'Saya bukan orang Jepang', tip:'じゃないです = ではありません (formal). Keduanya benar.' },
+      { term:'います / あります', desc:'Ada (hidup vs benda mati)', ex:'つくえ の うえ に ほん が あります', tr:'Di atas meja ada buku', tip:'います = makhluk hidup (人・動物). あります = benda mati. ねこがいます vs かぎがあります.' },
+      { term:'〜てください', desc:'Meminta seseorang melakukan sesuatu (sopan)', ex:'まどを あけて ください', tr:'Tolong buka jendelanya', tip:'Te-form + ください. Semakin tinggi kata sopan yang dipakai, semakin formal permintaannya.' },
+      { term:'〜ないでください', desc:'Meminta seseorang TIDAK melakukan sesuatu', ex:'ここで たばこを すわないでください', tr:'Tolong jangan merokok di sini', tip:'Bentuk ない + でください. Sering ada di papan pengumuman dan larangan.' },
+      { term:'〜ましょう / 〜ましょうか', desc:'Mari kita ~ / Bagaimana kalau kita ~?', ex:'いっしょに たべましょう！', tr:'Mari makan bersama!', tip:'ましょう = ajakan tegas "ayo!". ましょうか = lebih halus, menanyakan pendapat.' },
+      { term:'〜ませんか', desc:'Maukah ~ ? / Bagaimana kalau ~ ? (ajakan halus)', ex:'いっしょに えいがを みませんか？', tr:'Maukah menonton film bersama?', tip:'Lebih sopan dari ましょうか. Sering dipakai saat mengundang seseorang.' },
+      { term:'〜たいです / 〜たくないです', desc:'Ingin melakukan ~ / Tidak ingin ~', ex:'にほんに いきたいです', tr:'Ingin pergi ke Jepang', tip:'Masu-stem + たい + です. Bukan kata kerja, tapi い-adjektiva! Jadi: たかい = たかくない.' },
+      { term:'〜てもいいですか', desc:'Bolehkah saya ~ ? (minta izin)', ex:'しゃしんを とっても いいですか？', tr:'Bolehkah saya mengambil foto?', tip:'Te-form + もいいですか. Jawaban: はい、どうぞ (ya, silakan) / いいえ、いけません (tidak boleh).' },
+      { term:'〜てはいけません', desc:'Tidak boleh ~ / Dilarang ~', ex:'ここでは たばこを すっては いけません', tr:'Di sini dilarang merokok', tip:'Sering di papan larangan. Lebih kuat dari ないでください (larangan keras).' },
+      { term:'〜から (sebab)', desc:'Karena ~ / Sebab ~', ex:'あたまが いたいから、やすみます', tr:'Karena kepala sakit, saya istirahat', tip:'S1 + から + S2. から di tengah kalimat = "karena". Bedakan から = dari (asal tempat).' },
+      { term:'〜ので (sebab formal)', desc:'Karena ~ (lebih sopan dari から)', ex:'じかんが ないので、いそぎます', tr:'Karena tidak ada waktu, saya terburu-buru', tip:'ので lebih formal/sopan dari から. Sering dipakai dalam situasi formal atau surat.' },
+      { term:'〜ことができます', desc:'Bisa / Mampu melakukan ~', ex:'にほんごで はなすことが できます', tr:'Bisa berbicara dalam bahasa Jepang', tip:'V(kamus) + ことができます. Bentuk yang lebih formal dari できます saja.' },
+      { term:'〜より〜のほうが', desc:'A lebih ~ daripada B (perbandingan)', ex:'バスより でんしゃの ほうが はやいです', tr:'Kereta lebih cepat daripada bus', tip:'Struktur: BよりAのほうが〜 = A lebih ~ dari B. より = "daripada".' },
+      { term:'〜がいちばん〜 (superlative)', desc:'~ paling ~ (dari semuanya)', ex:'くだものの なかで りんごが いちばん すきです', tr:'Di antara buah-buahan, apel yang paling saya suka', tip:'の中で + Noun + がいちばん + Adj/Verb. いちばん = nomor satu / paling.' },
+      { term:'〜つもりです', desc:'Berniat / Berencana melakukan ~', ex:'らいねん にほんに いくつもりです', tr:'Tahun depan berencana pergi ke Jepang', tip:'V(kamus) + つもりです. Rencana yang sudah ada niat kuat. Negatif: V(nai) + つもりです.' },
+      { term:'〜ほうがいいです', desc:'Lebih baik ~ (saran/rekomendasi)', ex:'はやく ねたほうが いいですよ', tr:'Lebih baik tidur cepat lho', tip:'V(ta) + ほうがいいです = saran positif. V(nai) + ほうがいいです = saran negatif (lebih baik tidak ~).' },
+      { term:'〜たりする (listing actions)', desc:'Melakukan hal-hal seperti ~ (daftar tidak lengkap)', ex:'しゅうまつは えいがを みたり かいものを したりします', tr:'Di akhir pekan, nonton film, belanja, dll.', tip:'V(ta) + り + V(ta) + り + します. Menunjukkan beberapa kegiatan secara bergantian, tidak semua disebutkan.' },
+      { term:'〜ながら (sambil)', desc:'Melakukan dua hal bersamaan', ex:'おんがくを ききながら べんきょうします', tr:'Belajar sambil mendengarkan musik', tip:'V1(masu-stem) + ながら + V2. V2 = aksi utama. V1 = aksi sambil.' },
+    ]
+  },
+
+  // ── 6. KATA TANYA & DEMONSTRATIF ─────────────────────────────────────────
+  {
+    id: 'question-demo', title: 'Kata Tanya & Demonstratif', icon: '❓',
+    intro: 'Kata tanya dan kata tunjuk adalah hal pertama yang dibutuhkan untuk berkomunikasi. Hafalkan semua ini!',
+    items: [
+      { term:'なに / なん (nani/nan)', desc:'Apa?', ex:'これ は なん ですか？', tr:'Ini apa?', tip:'なに dipakai sebelum kata kerja/partikel. なん dipakai sebelum です atau counter (なんじ、なんさい).' },
+      { term:'どこ (doko)', desc:'Di mana?', ex:'トイレ は どこ ですか？', tr:'Di mana toilet?', tip:'Sangat penting saat di Jepang! Kombinasi: どこから(dari mana?) どこへ(ke mana?) どこで(di mana melakukan?)' },
+      { term:'いつ (itsu)', desc:'Kapan?', ex:'たんじょうびは いつ ですか？', tr:'Kapan ulang tahunmu?', tip:'Tidak perlu partikel setelah いつ dalam kalimat tanya.' },
+      { term:'だれ / どなた (dare/donata)', desc:'Siapa? (どなた = lebih sopan)', ex:'あの ひと は だれ ですか？', tr:'Orang itu siapa?', tip:'どなた adalah bentuk sopan dari だれ. Pakai どなた untuk orang yang dihormati.' },
+      { term:'どれ (dore)', desc:'Yang mana? (dari 3+ pilihan)', ex:'あなたの かばん は どれ ですか？', tr:'Tas kamu yang mana?', tip:'Untuk 2 pilihan pakai どちら(どっち). Untuk 3+ pilihan pakai どれ.' },
+      { term:'どの (dono)', desc:'Yang mana ~ ? (sebelum nomina)', ex:'どの ほん が すき ですか？', tr:'Buku yang mana yang kamu suka?', tip:'どれ berdiri sendiri, どの diikuti nomina: どの本(buku yang mana) どの人(orang yang mana)' },
+      { term:'どんな (donna)', desc:'Seperti apa? / Bagaimana jenisnya?', ex:'どんな たべもの が すき ですか？', tr:'Makanan seperti apa yang kamu suka?', tip:'Menanyakan jenis/karakteristik. Jawaban biasanya dengan kata sifat atau deskripsi.' },
+      { term:'どう (dou)', desc:'Bagaimana? (cara/kondisi)', ex:'にほんご の べんきょう は どう ですか？', tr:'Bagaimana belajar bahasa Jepangnya?', tip:'Menanyakan cara atau keadaan. Jawaban biasanya: いいです、むずかしいです, dll.' },
+      { term:'なぜ / どうして (naze/doushite)', desc:'Mengapa? / Kenapa?', ex:'どうして にほんごを べんきょうしますか？', tr:'Kenapa belajar bahasa Jepang?', tip:'どうして lebih percakapan sehari-hari. なぜ lebih formal. Jawab dengan: 〜から/〜ので (karena)' },
+      { term:'いくら (ikura)', desc:'Berapa harganya?', ex:'これ は いくら ですか？', tr:'Ini berapa harganya?', tip:'Khusus untuk harga/biaya. Untuk jumlah benda: いくつ (berapa buah). Untuk orang: なんにん.' },
+      { term:'これ/それ/あれ/どれ', desc:'Ini/Itu (dekat pendengar)/Itu (jauh)/Yang mana — berdiri sendiri', ex:'これ は わたしの かばん です', tr:'Ini adalah tas saya', tip:'これ = dekat pembicara. それ = dekat pendengar. あれ = jauh dari keduanya. どれ = mana.' },
+      { term:'この/その/あの/どの', desc:'Ini/Itu/Itu/Yang mana — diikuti NOMINA', ex:'この ほん は おもしろいです', tr:'Buku ini menarik', tip:'Harus selalu diikuti nomina: このほん(buku ini), そのひと(orang itu), あのみせ(toko itu).' },
+      { term:'ここ/そこ/あそこ/どこ', desc:'Di sini/Di situ/Di sana/Di mana — lokasi', ex:'トイレ は あそこ です', tr:'Toilet ada di sana', tip:'ここ = lokasi pembicara. そこ = lokasi pendengar. あそこ = lokasi jauh dari keduanya.' },
+    ]
+  },
+
+  // ── 7. KATA GANTI ORANG & STRUKTUR KALIMAT ───────────────────────────────
+  {
+    id: 'pronouns-structure', title: 'Kata Ganti & Struktur', icon: '🗣️',
+    intro: 'Struktur kalimat Jepang adalah SOV (Subjek-Objek-Verba) — berbeda dengan Indonesia/Inggris. Kata kerja SELALU di akhir kalimat!',
+    items: [
+      { term:'わたし / ぼく / おれ', desc:'Saya (formal) / Saya (pria casual) / Aku (pria sangat casual)', ex:'わたし は インドネシアじん です', tr:'Saya adalah orang Indonesia', tip:'Wanita: わたし/あたし. Pria: わたし(formal), ぼく(casual), おれ(sangat casual). Pemula pakai わたし saja!' },
+      { term:'あなた / きみ / おまえ', desc:'Kamu (formal/distant) / Kamu (akrab pria) / Kamu (kasar)', ex:'あなた の なまえ は なんですか？', tr:'Siapa namamu?', tip:'⚠️ Orang Jepang JARANG pakai あなた — terasa dingin. Lebih sopan pakai nama + さん: 田中さんは〜' },
+      { term:'かれ / かのじょ', desc:'Dia (laki-laki) / Dia (perempuan)', ex:'かれ は がくせい です', tr:'Dia (laki-laki) adalah pelajar', tip:'Di Jepang sehari-hari, lebih sering pakai nama + さん daripada かれ/かのじょ.' },
+      { term:'わたしたち / みなさん', desc:'Kami/Kita / Semua orang', ex:'わたしたち は にほんじん です', tr:'Kami adalah orang Jepang', tip:'みなさん sering dipakai sebagai sapaan: みなさん、こんにちは！= Halo semua!' },
+      { term:'Struktur Dasar: S は O を V', desc:'Subjek + Topik + Objek + Kata Kerja (SOV)', ex:'わたし は りんご を たべます', tr:'Saya makan apel', tip:'⚠️ Kata kerja SELALU di akhir! Ini perbedaan utama dari Indonesia. Biasakan urutan ini.' },
+      { term:'Kalimat dengan tempat: S は [tempat] で V', desc:'Subjek melakukan sesuatu di suatu tempat', ex:'わたし は としょかん で ほん を よみます', tr:'Saya membaca buku di perpustakaan', tip:'Perhatikan urutan: S は [tempat]で [objek]を V. Semua keterangan sebelum kata kerja.' },
+      { term:'Kalimat ada/memiliki: [tempat] に N が あります/います', desc:'Ada sesuatu di suatu tempat', ex:'つくえ の うえ に ねこ が います', tr:'Di atas meja ada kucing', tip:'Untuk menyatakan keberadaan: Lokasi + に + Benda + が + あります/います' },
+      { term:'Kalimat tanya: 〜か', desc:'Mengubah pernyataan → pertanyaan dengan か', ex:'これ は ほん です か？', tr:'Apakah ini buku?', tip:'Cukup tambahkan か di akhir kalimat. Intonasi naik. Tidak perlu mengubah urutan kata!' },
     ]
   },
 ]
