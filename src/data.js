@@ -807,14 +807,7 @@ export const CONVERSATION_QUIZ = [
   { q:'ゆっくりはなしてください', answer:'Tolong bicara lebih pelan', choices:['Tolong bicara lebih pelan','Tolong ulangi sekali lagi','Saya tidak mengerti','Tolong bantu saya'], label:'Apa artinya?' },
 ]
 
-export const MODULES_CONFIG = [
-  { id:'hiragana',     title:'Hiragana',      sub:'ひらがな', desc:'46 huruf dasar + dakuten + kombinasi. Fondasi utama!', level:'Langkah 1', icon:'あ', color:'#e63946', bg:'rgba(230,57,70,0.10)',    total:104 },
-  { id:'katakana',     title:'Katakana',      sub:'カタカナ', desc:'46 huruf serapan + dakuten + kombinasi. Untuk kata asing.', level:'Langkah 2', icon:'ア', color:'#457b9d', bg:'rgba(69,123,157,0.10)', total:104 },
-  { id:'vocabulary',   title:'Kosakata',      sub:'語彙',     desc:'9 kategori: Angka, Sapaan, Warna, Keluarga, Makanan, Waktu, Verba, Tubuh, Tempat.', level:'Langkah 3', icon:'語', color:'#2a9d8f', bg:'rgba(42,157,143,0.10)', total:120 },
-  { id:'grammar',      title:'Tata Bahasa',   sub:'文法',     desc:'Partikel, pola kalimat, kata sifat, dan kata kerja dasar.', level:'Langkah 4', icon:'文', color:'#e9c46a', bg:'rgba(233,196,106,0.10)', total:40 },
-  { id:'kanji',        title:'Kanji N5',      sub:'漢字',     desc:'50 kanji JLPT N5 dengan on/kun yomi dan contoh penggunaan.', level:'Langkah 5', icon:'漢', color:'#8338ec', bg:'rgba(131,56,236,0.10)', total:50 },
-  { id:'conversation', title:'Percakapan',    sub:'会話',     desc:'6 situasi: Perkenalan, Restoran, Belanja, Bantuan, Transportasi, Darurat.', level:'Langkah 6', icon:'話', color:'#f4a261', bg:'rgba(244,162,97,0.10)', total:42 },
-]
+// MODULES_CONFIG dipindah ke data_modules.js
 
 // ─── BUDAYA JEPANG ────────────────────────────────────────────────────────────
 export const BUDAYA = [
@@ -1121,11 +1114,117 @@ export const JLPT_N5_DRILL = {
   ],
 }
 
-// ─── UPDATE MODULES CONFIG ────────────────────────────────────────────────────
-export const NEW_MODULES = [
-  { id:'budaya',      title:'Budaya Jepang',     sub:'日本文化',  desc:'Etos kerja, salam di kantor, norma sosial, kehidupan sehari-hari di Jepang.', level:'Langkah 7', icon:'🎌', color:'#e76f51', bg:'rgba(231,111,81,0.10)',  total:34 },
-  { id:'bahasa-kerja',title:'Bahasa Kerja',       sub:'職場言語',  desc:'Keselamatan kerja, instruksi pabrik, kosakata industri & kehidupan asrama.', level:'Langkah 8', icon:'🏭', color:'#2a9d8f', bg:'rgba(42,157,143,0.10)', total:36 },
-  { id:'counter',     title:'Kata Bilangan',      sub:'助数詞',    desc:'Cara menghitung benda: 一本、二枚、三台... sangat penting untuk sehari-hari.', level:'Langkah 9', icon:'🔢', color:'#457b9d', bg:'rgba(69,123,157,0.10)', total:40 },
-  { id:'verb-advanced',title:'Kata Kerja Lanjutan', sub:'動詞活用', desc:'Bentuk て, ない, たい, dan ことができる — kunci berbicara lancar.', level:'Langkah 10', icon:'⚡', color:'#8338ec', bg:'rgba(131,56,236,0.10)', total:20 },
-  { id:'jlpt-n5',     title:'JLPT N5 Drill',      sub:'N5試験',   desc:'Latihan soal format JLPT N5: kanji, partikel, kosakata. Siap ujian!', level:'Langkah 11', icon:'📝', color:'#e63946', bg:'rgba(230,57,70,0.10)',  total:24 },
+// NEW_MODULES dipindah ke data_modules.js
+
+// ─── RE-EXPORT dari data_modules ─────────────────────────────────────────────
+export { STAGES, MODULES_CONFIG } from './data_modules.js'
+
+// ─── KATA KERJA GOLONGAN 1 (五段動詞) ────────────────────────────────────────
+export const VERBS_GOL1 = [
+  { dict:'かく',  masu:'かきます',  nai:'かかない', te:'かいて',  meaning:'Menulis',          end:'く',  note:'' },
+  { dict:'きく',  masu:'ききます',  nai:'きかない', te:'きいて',  meaning:'Mendengar/Bertanya', end:'く',  note:'' },
+  { dict:'およぐ',masu:'およぎます',nai:'およがない',te:'およいで',meaning:'Berenang',           end:'ぐ',  note:'ぐ→いで' },
+  { dict:'はなす',masu:'はなします',nai:'はなさない',te:'はなして',meaning:'Berbicara',          end:'す',  note:'' },
+  { dict:'かえす',masu:'かえします',nai:'かえさない',te:'かえして',meaning:'Mengembalikan',      end:'す',  note:'' },
+  { dict:'まつ',  masu:'まちます',  nai:'またない', te:'まって',  meaning:'Menunggu',           end:'つ',  note:'つ→って' },
+  { dict:'もつ',  masu:'もちます',  nai:'もたない', te:'もって',  meaning:'Membawa/Memegang',   end:'つ',  note:'' },
+  { dict:'しぬ',  masu:'しにます',  nai:'しなない', te:'しんで',  meaning:'Mati',               end:'ぬ',  note:'ぬ→んで' },
+  { dict:'よぶ',  masu:'よびます',  nai:'よばない', te:'よんで',  meaning:'Memanggil',          end:'ぶ',  note:'ぶ→んで' },
+  { dict:'あそぶ',masu:'あそびます',nai:'あそばない',te:'あそんで',meaning:'Bermain',            end:'ぶ',  note:'' },
+  { dict:'のむ',  masu:'のみます',  nai:'のまない', te:'のんで',  meaning:'Minum',              end:'む',  note:'む→んで' },
+  { dict:'よむ',  masu:'よみます',  nai:'よまない', te:'よんで',  meaning:'Membaca',            end:'む',  note:'' },
+  { dict:'やすむ',masu:'やすみます',nai:'やすまない',te:'やすんで',meaning:'Istirahat',          end:'む',  note:'' },
+  { dict:'かう',  masu:'かいます',  nai:'かわない', te:'かって',  meaning:'Membeli',            end:'う',  note:'う→って' },
+  { dict:'つかう',masu:'つかいます',nai:'つかわない',te:'つかって',meaning:'Menggunakan',        end:'う',  note:'' },
+  { dict:'おわる',masu:'おわります',nai:'おわらない',te:'おわって',meaning:'Selesai/Berakhir',   end:'る',  note:'⚠️Gol1!' },
+  { dict:'かえる',masu:'かえります',nai:'かえらない',te:'かえって',meaning:'Pulang',             end:'る',  note:'⚠️Gol1!' },
+  { dict:'はいる',masu:'はいります',nai:'はいらない',te:'はいって',meaning:'Masuk',              end:'る',  note:'⚠️Gol1!' },
+  { dict:'のる',  masu:'のります',  nai:'のらない', te:'のって',  meaning:'Naik kendaraan',     end:'る',  note:'⚠️Gol1!' },
+  { dict:'いく',  masu:'いきます',  nai:'いかない', te:'いって',  meaning:'Pergi',              end:'く',  note:'いく→いって(kecuali)' },
+  { dict:'ある',  masu:'あります',  nai:'ない(khusus)',te:'あって',meaning:'Ada (benda)',         end:'る',  note:'⚠️Gol1! Negatif: ない' },
+  { dict:'わかる',masu:'わかります',nai:'わからない',te:'わかって',meaning:'Mengerti',           end:'る',  note:'⚠️Gol1!' },
+  { dict:'いう',  masu:'いいます',  nai:'いわない', te:'いって',  meaning:'Berkata',            end:'う',  note:'' },
+  { dict:'おく',  masu:'おきます',  nai:'おかない', te:'おいて',  meaning:'Meletakkan',         end:'く',  note:'' },
+  { dict:'あるく',masu:'あるきます',nai:'あるかない',te:'あるいて',meaning:'Berjalan kaki',       end:'く',  note:'' },
+  { dict:'はしる',masu:'はしります',nai:'はしらない',te:'はしって',meaning:'Berlari',            end:'る',  note:'⚠️Gol1!' },
+  { dict:'はたらく',masu:'はたらきます',nai:'はたらかない',te:'はたらいて',meaning:'Bekerja',    end:'く',  note:'' },
+  { dict:'きる',  masu:'きります',  nai:'きらない', te:'きって',  meaning:'Memotong',           end:'る',  note:'⚠️Gol1! Beda: きる(pakai)=Gol2' },
 ]
+
+// ─── KATA KERJA GOLONGAN 2 & 3 ───────────────────────────────────────────────
+export const VERBS_GOL23 = [
+  // Golongan 2 (Ichidan -iru)
+  { dict:'みる',    masu:'みます',    nai:'みない',    te:'みて',    meaning:'Melihat/Menonton', group:2, end:'-iru' },
+  { dict:'きる',    masu:'きます',    nai:'きない',    te:'きて',    meaning:'Memakai (baju)',   group:2, end:'-iru', note:'Beda: きる(potong)=Gol1' },
+  { dict:'おきる',  masu:'おきます',  nai:'おきない',  te:'おきて',  meaning:'Bangun tidur',     group:2, end:'-iru' },
+  { dict:'いる',    masu:'います',    nai:'いない',    te:'いて',    meaning:'Ada (makhluk)',     group:2, end:'-iru' },
+  { dict:'おりる',  masu:'おります',  nai:'おりない',  te:'おりて',  meaning:'Turun kendaraan',  group:2, end:'-iru' },
+  { dict:'あびる',  masu:'あびます',  nai:'あびない',  te:'あびて',  meaning:'Mandi (shower)',    group:2, end:'-iru' },
+  { dict:'できる',  masu:'できます',  nai:'できない',  te:'できて',  meaning:'Bisa/Mampu',        group:2, end:'-iru', note:'できる juga verb Gol2' },
+  // Golongan 2 (Ichidan -eru)
+  { dict:'たべる',  masu:'たべます',  nai:'たべない',  te:'たべて',  meaning:'Makan',            group:2, end:'-eru' },
+  { dict:'ねる',    masu:'ねます',    nai:'ねない',    te:'ねて',    meaning:'Tidur',             group:2, end:'-eru' },
+  { dict:'おしえる',masu:'おしえます',nai:'おしえない',te:'おしえて',meaning:'Mengajar/Memberi tahu',group:2,end:'-eru' },
+  { dict:'でる',    masu:'でます',    nai:'でない',    te:'でて',    meaning:'Keluar',            group:2, end:'-eru' },
+  { dict:'あける',  masu:'あけます',  nai:'あけない',  te:'あけて',  meaning:'Membuka',           group:2, end:'-eru' },
+  { dict:'しめる',  masu:'しめます',  nai:'しめない',  te:'しめて',  meaning:'Menutup',           group:2, end:'-eru' },
+  { dict:'つける',  masu:'つけます',  nai:'つけない',  te:'つけて',  meaning:'Menyalakan',        group:2, end:'-eru' },
+  { dict:'けす',    masu:'けします',  nai:'けさない',  te:'けして',  meaning:'Memadamkan/Hapus',  group:1, end:'す',   note:'⚠️Gol1! berakhiran su' },
+  { dict:'みせる',  masu:'みせます',  nai:'みせない',  te:'みせて',  meaning:'Menunjukkan',       group:2, end:'-eru' },
+  { dict:'はじめる',masu:'はじめます',nai:'はじめない',te:'はじめて',meaning:'Memulai',           group:2, end:'-eru' },
+  { dict:'おぼえる',masu:'おぼえます',nai:'おぼえない',te:'おぼえて',meaning:'Menghafal',         group:2, end:'-eru' },
+  { dict:'かんがえる',masu:'かんがえます',nai:'かんがえない',te:'かんがえて',meaning:'Berpikir',  group:2, end:'-eru' },
+  // Golongan 3 (Irregular)
+  { dict:'する',    masu:'します',    nai:'しない',    te:'して',    meaning:'Melakukan',        group:3, end:'する', note:'IRREGULAR — hafal!' },
+  { dict:'くる',    masu:'きます',    nai:'こない',    te:'きて',    meaning:'Datang',           group:3, end:'くる', note:'IRREGULAR — hafal! こない bukan くない' },
+  // Suru compounds
+  { dict:'べんきょうする', masu:'べんきょうします', nai:'べんきょうしない', te:'べんきょうして', meaning:'Belajar',   group:3, end:'N+する' },
+  { dict:'うんどうする',   masu:'うんどうします',   nai:'うんどうしない',   te:'うんどうして',   meaning:'Olahraga', group:3, end:'N+する' },
+  { dict:'りょこうする',   masu:'りょこうします',   nai:'りょこうしない',   te:'りょこうして',   meaning:'Traveling', group:3, end:'N+する' },
+  { dict:'でんわする',     masu:'でんわします',     nai:'でんわしない',     te:'でんわして',     meaning:'Menelepon', group:3, end:'N+する' },
+  { dict:'しょうかいする', masu:'しょうかいします', nai:'しょうかいしない', te:'しょうかいして', meaning:'Memperkenalkan',group:3,end:'N+する' },
+]
+
+// ─── KATA GANTI & KATA TANYA ─────────────────────────────────────────────────
+export const DASAR_KOMUNIKASI = {
+  pronouns: [
+    { jp:'わたし',   romaji:'watashi',   meaning:'Saya (formal, universal)', note:'Dipakai oleh siapa saja — pilihan paling aman untuk pemula' },
+    { jp:'わたしたち',romaji:'watashitachi',meaning:'Kami / Kita',          note:'Jamak dari わたし' },
+    { jp:'ぼく',     romaji:'boku',      meaning:'Saya (pria, casual)',      note:'Pria pakai saat bicara dengan teman. Jangan pakai ke atasan' },
+    { jp:'おれ',     romaji:'ore',       meaning:'Aku (pria, sangat kasual)',note:'Sangat informal. Hindari pakai ke orang yang belum akrab' },
+    { jp:'あたし',   romaji:'atashi',    meaning:'Saya (wanita, casual)',    note:'Wanita pakai saat santai. Lebih feminim dari わたし' },
+    { jp:'あなた',   romaji:'anata',     meaning:'Kamu / Anda (formal)',     note:'⚠️ Jarang dipakai! Lebih sopan pakai nama+さん: 田中さん' },
+    { jp:'きみ',     romaji:'kimi',      meaning:'Kamu (pria ke pria, akrab)',note:'Pria pakai ke teman dekat. Jangan ke atasan' },
+    { jp:'かれ',     romaji:'kare',      meaning:'Dia (laki-laki)',           note:'Juga bisa berarti "pacar (pria)"' },
+    { jp:'かのじょ', romaji:'kanojo',    meaning:'Dia (perempuan)',          note:'Juga bisa berarti "pacar (wanita)"' },
+    { jp:'みなさん', romaji:'minasan',   meaning:'Semua orang / hadirin',    note:'Sapaan formal: みなさん、こんにちは！' },
+  ],
+  demonstratives: [
+    { jp:'これ',  romaji:'kore',  meaning:'Ini (benda dekat pembicara)',   note:'Berdiri sendiri tanpa nomina' },
+    { jp:'それ',  romaji:'sore',  meaning:'Itu (benda dekat pendengar)',   note:'Berdiri sendiri tanpa nomina' },
+    { jp:'あれ',  romaji:'are',   meaning:'Itu (benda jauh dari keduanya)',note:'Berdiri sendiri tanpa nomina' },
+    { jp:'どれ',  romaji:'dore',  meaning:'Yang mana? (3+ pilihan)',       note:'Untuk 2 pilihan: どちら/どっち' },
+    { jp:'この',  romaji:'kono',  meaning:'Ini ~ (diikuti nomina)',        note:'このほん = buku ini' },
+    { jp:'その',  romaji:'sono',  meaning:'Itu ~ (diikuti nomina)',        note:'そのひと = orang itu' },
+    { jp:'あの',  romaji:'ano',   meaning:'Itu ~ (jauh, diikuti nomina)',  note:'あのみせ = toko itu (di sana)' },
+    { jp:'どの',  romaji:'dono',  meaning:'Yang mana ~ (diikuti nomina)',  note:'どのかばん = tas yang mana' },
+    { jp:'ここ',  romaji:'koko',  meaning:'Di sini (lokasi pembicara)',    note:'Untuk tempat/lokasi' },
+    { jp:'そこ',  romaji:'soko',  meaning:'Di situ (lokasi pendengar)',    note:'Untuk tempat/lokasi' },
+    { jp:'あそこ',romaji:'asoko', meaning:'Di sana (jauh dari keduanya)', note:'Untuk tempat/lokasi' },
+    { jp:'どこ',  romaji:'doko',  meaning:'Di mana?',                      note:'Untuk tempat/lokasi' },
+  ],
+  questionWords: [
+    { jp:'なに / なん', romaji:'nani / nan', meaning:'Apa?',              note:'なん sebelum です atau counter (なんじ, なんさい, なんぼん)' },
+    { jp:'どこ',        romaji:'doko',        meaning:'Di mana?',          note:'Kombinasi: どこから(dari mana) どこへ(ke mana) どこで(melakukan di mana)' },
+    { jp:'いつ',        romaji:'itsu',        meaning:'Kapan?',            note:'いつ tidak perlu partikel: いつ行きますか？' },
+    { jp:'だれ / どなた',romaji:'dare / donata',meaning:'Siapa?',         note:'どなた = bentuk sopan dari だれ. Pakai ke orang dihormati' },
+    { jp:'どれ',        romaji:'dore',        meaning:'Yang mana? (pilihan)',note:'Untuk 2 pilihan: どちら. Untuk 3+: どれ' },
+    { jp:'どんな',      romaji:'donna',       meaning:'Seperti apa? / Jenis apa?', note:'Menanyakan karakteristik/jenis' },
+    { jp:'どう',        romaji:'dou',         meaning:'Bagaimana? (kondisi/cara)', note:'どうですか = bagaimana? (meminta pendapat)' },
+    { jp:'なぜ / どうして',romaji:'naze / doushite',meaning:'Mengapa? Kenapa?', note:'どうして = lebih kasual. なぜ = lebih formal/tulis' },
+    { jp:'いくら',      romaji:'ikura',       meaning:'Berapa harganya?', note:'Khusus untuk harga. Jumlah: いくつ. Orang: なんにん' },
+    { jp:'いくつ',      romaji:'ikutsu',      meaning:'Berapa jumlah? / Berapa usia?', note:'Untuk umur: おいくつですか = berapa umur Anda?' },
+    { jp:'なんじ',      romaji:'nanji',       meaning:'Jam berapa?',      note:'なん + じ(counter jam). なんぷん = berapa menit' },
+    { jp:'なんさい',    romaji:'nansai',      meaning:'Berapa tahun usianya?', note:'Lebih sopan: おいくつですか？' },
+  ],
+}
